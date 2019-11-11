@@ -1,0 +1,273 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Enroll</title>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/gloab.css" rel="stylesheet">
+<link href="css/index.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-1.5.2.js" ></script>
+<script src="js/register.js"></script>
+<style type="text/css">
+	body{background: url(images/aaa.jpg);}
+	.btn{ transition: width 1s,box-shadow 1s;}
+	.btn:hover{width: 400px; transition: width 1s,box-shadow 1s; box-shadow: #000 4px 4px 10px;}
+.STYLE1 {color: #FF3333}
+</style>
+</head>
+<body class="bgf4">
+<div class="login-box f-mt10 f-pb50">
+	<div class="main bgf">    
+    	<div class="reg-box-pan display-inline">  
+        	<div class="step">        	
+                <ul>
+                    <li class="col-xs-4 on">
+                        <span class="num"><em class="f-r5"></em><i>1</i></span>                	
+                        <span class="line_bg lbg-r"></span>
+                        <p class="lbg-txt">Member Information</p>
+                    </li>
+                    <li class="col-xs-4">
+                        <span class="num"><em class="f-r5"></em><i>2</i></span>
+                        <span class="line_bg lbg-l"></span>
+                        <span class="line_bg lbg-r"></span>
+                        <p class="lbg-txt">Security Question</p>
+                    </li>
+                    <li class="col-xs-4">
+                        <span class="num"><em class="f-r5"></em><i>3</i></span>
+                        <span class="line_bg lbg-l"></span>
+                        <p class="lbg-txt">Enroll Complete</p>
+                    </li>
+                </ul>
+            </div>
+        	<div class="reg-box" id="verifyCheck" style="margin-top:20px;">
+            	<div class="part1">                	
+                    <div class="item col-xs-12">
+                        <span class="intelligent-label f-fl"><b class="ftx04">*</b>Member name：</span>
+                        <div class="f-fl item-ifo">
+                            <input type="text" maxlength="20" class="txt03 f-r3 required" name="adminNo" id="adminNo" />                            <span class="ie8 icon-close close hide"></span>
+                            <label class="icon-sucessfill blank hide"></label>
+                            <label class="focus"><span>6-20 English letters with numbers / underline</span></label>
+                            <label class="focus valid"></label>
+                        </div>
+                    </div>
+                    <div class="item col-xs-12">
+                        <span class="intelligent-label f-fl"><b class="ftx04">*</b>Phone number：</span>
+						
+						<!-- ||isPhone -->
+                        <div class="f-fl item-ifo">
+                            <input type="text" class="txt03 f-r3 required" keycodes="tel" tabindex="2" data-valid="isNonEmpty" data-error="Can not be blank||Form is not correct" maxlength="10" id="phone_x" value="" />
+                            <span class="ie8 icon-close close hide"></span>                           
+                            <label class="icon-sucessfill blank hide"></label>
+                            <label class="focus">Please fill the blank with 10 valid numbers</label>
+                            <label class="focus valid"></label>
+                        </div>
+                    </div>
+                    <div class="item col-xs-12">
+                        <span class="intelligent-label f-fl"><b class="ftx04">*</b>New password：</span>
+                        <div class="f-fl item-ifo">
+                            <input type="password" id="password" maxlength="20" class="txt03 f-r3 required" tabindex="3" style="ime-mode:disabled;" onpaste="return  false" autocomplete="off" data-valid="isNonEmpty||between:6-20||level:2" data-error="Can not be blank||Password length 6-20 digits||Password is too easy,not safe" />
+                            <span class="ie8 icon-close close hide" style="right:55px"></span>
+                            <a onClick="ch('ch1')"><span id="p1" class="showpwd"></span>  </a>                      
+                            <label class="icon-sucessfill blank hide"></label>
+                            <label class="focus">6-20 characters（Case Sensitive）mix with numbers</label>
+                            <label class="focus valid"></label>
+                            <span class="clearfix"></span>
+                            <label class="strength">
+                            	<span class="f-fl f-size12">Password Strength：</span>
+                            	<b><i>Weak</i><i>Ok</i><i>Strong</i></b>
+                            </label>    
+                        </div>
+                    </div>
+                    <div class="item col-xs-12">
+                        <span class="intelligent-label f-fl"><b class="ftx04">*</b>Confirm your password：</span>
+                        <div class="f-fl item-ifo">
+                            <input type="password" maxlength="20" class="txt03 f-r3 required" tabindex="4" style="ime-mode:disabled;" onpaste="return  false" autocomplete="off" data-valid="isNonEmpty||between:6-16||isRepeat:password" data-error="Password can not be blank||Password length 6-16||Passwords are not the same" id="rePassword" />
+                            <span class="ie8 icon-close close hide" style="right:55px"></span>
+                           <a onClick="ch('ch2')"> <span class="showpwd" id="p2"></span></a>
+                            <label class="icon-sucessfill blank hide"></label>
+                            <label class="focus">Please type your password above again</label>
+                            <label class="focus valid"></label>                          
+                        </div>
+                    </div>
+
+
+                    <div class="item col-xs-12">
+                        <span class="intelligent-label f-fl"><b class="ftx04">*</b>Safety code：</span>
+                        <div class="f-fl item-ifo">
+                            <input type="password" maxlength="20" class="txt03 f-r3 required" tabindex="4" style="ime-mode:disabled;" onpaste="return  false" autocomplete="off" data-valid="isNonEmpty||between:6-16||isRepeat:password" data-error="Password can not be blank||Password length 6-16||Passwords are not the same" id="Safety" />
+                            <span class="ie8 icon-close close hide" style="right:55px"></span>
+                            <a onClick="ch('ch3')"> <span class="showpwd" id="p3"></span></a>
+                            <label class="icon-sucessfill blank hide"></label>
+                            <label class="focus">Please type 6-20 numbers or characters</label>
+                            <label class="focus valid"></label>
+                        </div>
+                    </div>
+					
+					
+					<div class="item col-xs-12">
+                        <span class="intelligent-label f-fl"><b class="ftx04">*</b>Country：</span>
+                        <div class="f-fl item-ifo">
+                         <select name="gj" id="gj">
+						  <option value="" selected="selected">Choose your country</option>
+						 <option value="1">china</option>
+						  <option value="1">Australia</option>
+						   <option value="1">Britain</option>
+						    <option value="1">Japan</option>
+							 <option value="1">Korea</option>
+							  <option value="1">Canada</option>
+							   <option value="1">Thailand</option>
+							    <option value="1">Singapore</option>
+						 </select>
+                            <span class="ie8 icon-close close hide" style="right:55px"></span>
+                            
+                            <label class="icon-sucessfill blank hide"></label>
+                            <label class="focus">Please choose your country</label>
+                            <label class="focus valid"></label>                          
+                        </div>
+                  </div>
+				  
+				  
+					
+				
+				  
+				  
+                    <div class="item col-xs-12">
+                        <span class="intelligent-label f-fl"><b class="ftx04">*</b>Verify code：</span>
+                        <div class="f-fl item-ifo">
+                            <input type="text" maxlength="4" class="txt03 f-r3 f-fl required" tabindex="4" style="width:167px" id="randCode" data-valid="isNonEmpty" data-error="" />
+                            <span class="ie8 icon-close close hide"></span>
+                            <label class="f-size12 c-999 f-fl f-pl10">
+                            	<img src="images/yzm.jpg" />                               
+                            </label>                        
+                            <label class="icon-sucessfill blank hide" style="left:380px"></label>
+                            <label class="focusa">Can not see？(Type TBZC )<a href="javascript:;" class="c-blue">Change one</a></label>
+                            <label class="focus valid" style="left:370px"></label>                        
+                        </div>
+                    </div>
+                    <div class="item col-xs-12" style="height:auto">
+                        <span class="intelligent-label f-fl">&nbsp;</span>  
+                        <p class="f-size14 required"  data-valid="isChecked" data-error="">
+                        	<input type="checkbox" checked /><a href="javascript:showoutc();" class="f-ml5">I have read and understood the terms and conditions</a>
+                        </p>                       
+                        <label class="focus valid"></label> 
+                    </div> 
+                    <div class="item col-xs-12">
+                        <span class="intelligent-label f-fl">&nbsp;</span>    
+                        <div class="f-fl item-ifo">
+                           <a href="javascript:;" class="btn btn-blue f-r3" onClick="checkinput()" id="btn_part1">Next Step</a>
+                        </div>
+                    </div> 
+                </div>
+                <div class="part2" style="display:none">
+                	<div class="alert alert-info" style="width:700px">Message has been sent to your phone</div>
+                    <div class="item col-xs-12 f-mb10" style="height:auto">
+                        <span class="intelligent-label f-fl">Phone number：</span>
+                        <div class="f-fl item-ifo c-blue">
+							<p id="ip_txt">15824450934</p>
+                           
+                        </div>
+						<script type="text/javascript">
+							var oIp_txt = document.getElementById("ip_txt");
+							var oPh_x = document.getElementById("phone_x");
+							setInterval(function (){
+								oIp_txt.innerHTML = oPh_x.value;
+							},1)
+							
+							
+						</script>
+                    </div>
+					
+					
+					
+					<div class="item col-xs-12">
+					    <span class="intelligent-label f-fl"><b class="ftx04">*</b>Address：</span>
+						 
+					    <div class="f-fl item-ifo">
+					        <input type="text" maxlength="12" id="verifyNo" class="txt03 f-r3 f-fl" tabindex="4" style="width:267px"  data-error="Please type your address" />
+					    </div>
+					</div>
+					
+					
+					<div class="item col-xs-12">
+					    <span class="intelligent-label f-fl"><b class="ftx04">*</b>Email：</span>
+						 
+					    <div class="f-fl item-ifo">
+					        <input type="text" maxlength="20" id="verifyNo" class="txt03 f-r3 f-fl" tabindex="4" style="width:267px"  data-error="Please type your email" />
+					    </div>
+					</div>
+					
+					
+
+					
+                    <div class="item col-xs-12">
+                        <span class="intelligent-label f-fl">&nbsp;</span>    
+                        <div class="f-fl item-ifo">
+                           <a href="javascript:;" class="btn btn-blue f-r3" id="btn_part2">Next Step</a>
+                        </div>
+                    </div> 
+                </div>
+                <div class="part3" style="display:none">
+                	<div class="item col-xs-12">
+                        <span class="intelligent-label f-fl"><b class="ftx04">*</b>Your important person：</span>
+                        <div class="f-fl item-ifo">
+                            <input type="text" maxlength="40" class="txt03 f-r3" tabindex="1" data-error="" id="adminNo" />   
+                            <span class="ie8 icon-close close hide"></span>                         
+                            <label class="icon-sucessfill blank hide"></label>
+                            <label class="focus">Who is your most important person? </label>
+                            <label class="focus valid"></label>
+                        </div>
+                    </div>
+					
+						<div class="item col-xs-12">
+					        <span class="intelligent-label f-fl"><b class="ftx04">*</b>School name：</span>
+					        <div class="f-fl item-ifo">
+					            <input type="text" maxlength="40" class="txt03 f-r3 " tabindex="1"  id="adminNo" />   
+								<!-- isNonEmpty||between:2-10||isZh -->
+					            <span class="ie8 icon-close close hide"></span>                         
+					            <label class="icon-sucessfill blank hide"></label>
+					            <label class="focus">The name of your primary school？</label>
+					            <label class="focus valid"></label>
+					        </div>
+					    </div>
+						
+							<div class="item col-xs-12">
+						        <span class="intelligent-label f-fl"><b class="ftx04">*</b>Your birthday：</span>
+						        <div class="f-fl item-ifo">
+						            <input type="text" maxlength="40" class="txt03 f-r3" tabindex="1" data-error="" id="adminNo" />   
+									<!-- isNonEmpty||between:2-10||isZh -->
+						            <span class="ie8 icon-close close hide"></span>                         
+						            <label class="icon-sucessfill blank hide"></label>
+						            <label class="focus">What is your birthday？</label>
+						            <label class="focus valid"></label>
+						        </div>
+						    </div>
+
+                    <div class="item col-xs-12">
+                        <span class="intelligent-label f-fl">&nbsp;</span>    
+                        <div class="f-fl item-ifo">
+                           <a href="javascript:;" class="btn btn-blue f-r3" id="btn_part3">Enroll now</a>
+                        </div>
+                    </div>
+                </div>  
+                <div class="part4 text-center" style="display:none">
+                	<h3>Congratulation! You are one of our members now</h3>
+                    <p class="c-666 f-mt30 f-mb50">After <strong id="times" class="f-size18">10</strong> seconds，this page will jump to <a href="index.html" class="c-blue">the home page</a></p>
+                </div>          
+            </div>
+        </div>
+    </div>
+</div>
+<div class="m-sPopBg" style="z-index:998;"></div>
+<div class="m-sPopCon regcon">
+	<div class="m-sPopTitle"><strong>Terms and conditions</strong><b id="sPopClose" class="m-sPopClose" onClick="closeClause()">×</b></div>
+    <div class="apply_up_content">
+    	<pre class="f-r0">
+		<strong>Please read all the terms and condition</strong>
+        </pre>
+    </div>
+    <center><a class="btn btn-blue btn-lg f-size12 b-b0 b-l0 b-t0 b-r0 f-pl50 f-pr50 f-r3" href="javascript:closeClause();">I have read and understood</a></center>
+</div>
+
+</body>
+</html>
